@@ -5,7 +5,7 @@ const LoginPage = () => {
   return (
     <div className="login-container">
       <div className="login-left">
-        <img src="../src/support.png" alt="Support Agent" />
+        <img src="../images/support.png" alt="Support Agent" />
       </div>
       <div className="login-right">
         <h2>WELCOME BACK</h2>
