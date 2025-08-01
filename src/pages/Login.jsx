@@ -1,30 +1,28 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import './Login.css';
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  const login = async () => {
-    // try {
-      const res = await axios.post("http://localhost:5000/api/users/login", { email, password });
-      localStorage.setItem("user", JSON.stringify(res.data));
-      navigate("/dashboard");
-    // } catch (err) {
-    //   alert("Invalid credentials");
-    // }
-  };
-
+const LoginPage = () => {
   return (
-    <div>
-      <h2>Login</h2>
-      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
-      <input placeholder="Password" type="password" onChange={e => setPassword(e.target.value)} />
-      <button onClick={login}>Login</button>
+    <div className="login-container">
+      <div className="login-left">
+        <img src="./src/support.png" alt="Support Agent" />
+      </div>
+      <div className="login-right">
+        <h2>WELCOME BACK</h2>
+        <p>Welcome back! Please enter your details.</p>
+        <form className="login-form">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" />
+          <label>Password</label>
+          <input type="password" placeholder="********" />
+          <button type="submit">Sign in</button>
+        </form>
+        <p className="signup-link">
+          Don’t have an account? <a href="/signup">Sign up for free!</a>
+        </p>
+      </div>
     </div>
   );
-}
+};
 
-export default Login;
+export default LoginPage;
