@@ -1,16 +1,19 @@
-
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import NewTicket from './pages/NewTicket';
 
 function App() {
-  
-
   return (
-    <>
-      
-      <h1>Support Desk</h1>
-      
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/new-ticket" element={<NewTicket />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
