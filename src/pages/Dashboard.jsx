@@ -10,7 +10,7 @@ import NewTicketModal from "../components/NewTicketModal";
 import { useNavigate } from "react-router-dom";
 Modal.setAppElement("#root");
 
-const Dashboard = (onClose) => {
+const Dashboard = () => {
   const [tickets, setTickets] = useState([]);
   const { user, token, logout } = useAuth();
   const [showModal, setShowModal] = useState(false);
@@ -58,9 +58,9 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   }, [token]);
 
   // Assign ticket
-  const handleAssign = async () => {
+  const handleAssign = async (e) => {
     if (!selectedSupport || !selectedTicket) return;
-
+ e.preventDefault();
     try {
       await axios.put(
         `https://support-desk-dashboard-server.onrender.com/api/tickets/${selectedTicket}/assign`,
@@ -70,7 +70,6 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
       alert("Ticket assigned!");
       setShowAssignModal(false);
       setSelectedSupport("");
-      onClose();
       // window.location.reload();
     } catch (err) {
       alert("Error: " + (err.response?.data?.message || err.message));
