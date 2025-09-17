@@ -70,7 +70,7 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
       alert("Ticket assigned!");
       setShowAssignModal(false);
       setSelectedSupport("");
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       alert("Error: " + (err.response?.data?.message || err.message));
     }
