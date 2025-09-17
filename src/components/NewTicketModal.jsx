@@ -19,7 +19,7 @@ const NewTicketModal = ({ onClose }) => {
       );
       alert("Ticket created!");
       onClose(); // close modal
-      window.location.reload(); // refresh ticket list
+       // refresh ticket list
     } catch (err) {
       alert("Error creating ticket: " + (err.response?.data?.message || err.message));
     }

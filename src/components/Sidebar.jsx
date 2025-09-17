@@ -19,9 +19,9 @@ export default function Sidebar() {
               <FaUser className="mr-2" /> Profile
             </NavLink>
         {/* <NavLink className="item" to="/tickets">🎫 Tickets</NavLink> */}
-        {(user?.role === "employee") && (
+        {/* {(user?.role === "employee") && (
           <NavLink className="item" to="/tickets/create">➕ Create Ticket</NavLink>
-        )}
+        )} */}
       </div>
 
       {user?.role === "admin" && (
