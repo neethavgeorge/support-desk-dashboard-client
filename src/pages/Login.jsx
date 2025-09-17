@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext"; 
 import "../styles/Login.css";
 import { NavLink } from "react-router-dom";
+import supportImg from "../images/support.png";
 
 
 const Login = () => {
@@ -54,7 +55,7 @@ const Login = () => {
         {/* Left Side with Image */}
         <div className="login-image">
           <img
-            src="../src/images/support.png"
+            src={supportImg}
             alt="Support"
           />
         </div>
