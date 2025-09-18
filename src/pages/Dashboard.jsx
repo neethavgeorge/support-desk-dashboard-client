@@ -71,7 +71,7 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
       setShowAssignModal(false);
       setSelectedSupport("");
       // window.location.reload();
-      navigate(0)
+      navigate("/dashboard")
     } catch (err) {
       alert("Error: " + (err.response?.data?.message || err.message));
     }
@@ -86,8 +86,7 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert("Ticket resolved!");
-      // window.location.reload();
-      navigate(0)
+      navigate("/dashboard")
     } catch (err) {
       alert("Error resolving ticket: " + (err.response?.data?.message || err.message));
     }
