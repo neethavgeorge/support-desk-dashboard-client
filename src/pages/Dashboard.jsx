@@ -57,6 +57,16 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
     fetchSupportUsers();
   }, [token]);
 
+  const fetchTickets = async () => {
+      try {
+        const res = await axios.get("https://support-desk-dashboard-server.onrender.com/api/tickets", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setTickets(res.data);
+      } catch (err) {
+        console.error("Error fetching tickets:", err.response?.data || err.message);
+      }
+    };
   // Assign ticket
   const handleAssign = async (e) => {
     if (!selectedSupport || !selectedTicket) return;
@@ -87,7 +97,7 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert("Ticket resolved!");
-      navigate("/dashboard")
+      await fetchTickets();
     } catch (err) {
       alert("Error resolving ticket: " + (err.response?.data?.message || err.message));
     }
@@ -271,6 +281,8 @@ const handleLogout = () => {
               </div>
             </div>
           )}
+
+          
         </div>
       </div>
     </div>
