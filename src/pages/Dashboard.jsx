@@ -68,10 +68,11 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert("Ticket assigned!");
-      setShowAssignModal(false);
+      setShowAssignModal(null);
       setSelectedSupport("");
       // window.location.reload();
-      navigate("/dashboard")
+      // navigate("/dashboard")
+      
     } catch (err) {
       alert("Error: " + (err.response?.data?.message || err.message));
     }
