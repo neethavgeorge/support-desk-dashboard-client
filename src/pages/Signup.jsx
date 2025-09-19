@@ -22,7 +22,7 @@ function Signup() {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("Signed Up successfully")
+        alert("Account created successfully!!! Please Login..")
         if (data.token) {
           localStorage.setItem("token", data.token);
           login({ user: data.user, token: data.token });
