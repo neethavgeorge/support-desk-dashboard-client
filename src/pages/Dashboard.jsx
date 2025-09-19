@@ -82,7 +82,7 @@ const [isViewModalOpen, setIsViewModalOpen] = useState(false);
       setSelectedSupport("");
       // window.location.reload();
       // navigate("/dashboard")
-      
+      await fetchTickets();
     } catch (err) {
       alert("Error: " + (err.response?.data?.message || err.message));
     }
