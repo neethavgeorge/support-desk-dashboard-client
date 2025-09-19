@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Signup.css";
+import { useAuth } from "../context/AuthContext"; 
 
 function Signup() {
   const [name, setName] = useState("");
@@ -8,6 +9,7 @@ function Signup() {
   const [role, setRole] = useState("employee"); // default role
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth(); 
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -20,9 +22,11 @@ function Signup() {
     })
       .then((res) => res.json())
       .then((data) => {
+        alert("Signed Up successfully")
         if (data.token) {
           localStorage.setItem("token", data.token);
-          navigate("/dashboard");
+          login({ user: data.user, token: data.token });
+          navigate("/login");
         } else {
           alert(data.message || "Signup failed");
         }
