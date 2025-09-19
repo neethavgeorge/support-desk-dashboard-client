@@ -89,10 +89,10 @@ const Login = () => {
 
           <p className="signup-text">
             Don’t have an account? <a href="/signup">Sign up!</a>
-          </p>
+          
           <NavLink className="item" to="/forgotpassword"><p className="forgot-link" >
-          Forgot Password?
-        </p></NavLink>
+          Forgot Password
+        </p></NavLink></p>
 
         {/* {showForgot && (
           <div className="forgot-password">
