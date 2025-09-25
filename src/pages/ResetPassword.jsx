@@ -18,7 +18,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const res = await axios.post(
+      const res = await axios.put(
         `https://support-desk-dashboard-server.onrender.com/api/auth/reset-password/${token}`,
         { password }
       );
