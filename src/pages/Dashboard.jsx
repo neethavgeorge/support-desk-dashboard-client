@@ -200,7 +200,7 @@ const handleLogout = () => {
             </thead>
             <tbody>
               {tickets.map((ticket) => (
-                <tr key={ticket._id}>
+                <tr key={ticket.ticketId}>
                   <td>{ticket._id.slice(-5)}</td>
                   <td>{ticket.title}</td>
                   <td>{ticket.description}</td>
