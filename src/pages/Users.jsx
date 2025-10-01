@@ -16,7 +16,9 @@ const token = localStorage.getItem("token");
       .then((res) => res.json())
       .then((data) => {
         console.log("Users API response:", data);  // 👀 Check here
-      setUsers(data.users || data);
+        const filteredUsers = (data.users || data).filter(
+      (u) => u.role !== "admin");
+      setUsers(filteredUsers);
         setLoading(false);
       })
       .catch(() => setLoading(false));
