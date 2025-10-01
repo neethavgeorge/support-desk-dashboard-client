@@ -83,7 +83,7 @@ const handleUpdateUser = (id, updates) => {
                     >
                       <option value="employee">Employee</option>
                       <option value="support">Support</option>
-                      <option value="admin">Admin</option>
+                      {/* <option value="admin">Admin</option> */}
                     </select>
                   </td>
                   <td>
