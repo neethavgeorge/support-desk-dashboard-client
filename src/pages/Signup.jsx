@@ -13,8 +13,14 @@ function Signup() {
 
   const handleSignup = (e) => {
     e.preventDefault();
+const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-    // Example API call (replace with your backend endpoint)
+  if (!passwordRegex.test(password)) {
+    alert(
+      "Password must be at least 8 characters, include 1 uppercase, 1 lowercase, 1 number, and 1 special character."
+    );
+  
     fetch("https://support-desk-dashboard-server.onrender.com/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
