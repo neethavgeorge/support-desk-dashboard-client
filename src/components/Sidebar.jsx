@@ -14,7 +14,7 @@ export default function Sidebar() {
     <aside className="sidebar">
       <div className="section">
         <div className="section-title">Main</div>
-        <NavLink className="item" to="/dashboard">🏠 Overview</NavLink>
+        <NavLink className="item" to="/dashboard">🏠 Dashboard</NavLink>
         <NavLink to="/profile" className="item">
               <FaUser className="mr-2" /> Profile
             </NavLink>
