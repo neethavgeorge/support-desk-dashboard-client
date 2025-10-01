@@ -20,7 +20,8 @@ const passwordRegex =
     alert(
       "Password must be at least 8 characters, include 1 uppercase, 1 lowercase, 1 number, and 1 special character."
     );
-  
+    return;
+  }
     fetch("https://support-desk-dashboard-server.onrender.com/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
